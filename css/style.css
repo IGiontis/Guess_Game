@@ -1,6 +1,10 @@
 :root {
   --space-header: 1.2rem;
   --letter-space: 0.1rem;
+  --pressed-box: #666;
+  --hover-box: #444;
+  --win-box: rgb(31, 125, 31);
+  --lost-box: rgb(252, 19, 19);
 }
 
 * {
@@ -79,16 +83,28 @@ body {
 .box {
   width: 10rem;
   height: 10rem;
-  background-color: red;
+  background-color: var(--pressed-box);
   cursor: pointer;
 }
 
 .box:hover {
-  background-color: yellow;
+  background-color: var(--hover-box);
 }
 
 /* Extra commands about hide etc */
 
 .hidden {
   display: none;
+}
+
+.pointerEvent {
+  pointer-events: none;
+}
+
+.win-box {
+  background-color: var(--win-box);
+}
+
+.lost-box {
+  background-color: var(--lost-box);
 }

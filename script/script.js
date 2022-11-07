@@ -59,19 +59,44 @@ difficulty.addEventListener("change", function (e) {
 // Implementation for adding images
 const addInnerBoxes = function () {
   const boxes = document.querySelectorAll(".box");
-  //   test
 
+  //  Adding to each box the value of win or lose
   boxes.forEach((currentBox, i) => {
     currentBox.addEventListener("click", function () {
-      currentBox.innerHTML = "test";
-      currentBox.style.backgroundColor = "yellow";
+      if (difficulty.value === "easy") currentBox.innerHTML = resSuffler[i];
+      if (difficulty.value === "medium") currentBox.innerHTML = mediumSuffler[i];
+      if (difficulty.value === "hard") currentBox.innerHTML = hardSuffler[i];
+      if (currentBox.innerHTML == "ok") currentBox.classList.add("pointerEvent", "win-box");
+      else {
+        currentBox.classList.add("lost-box", "pointerEvent");
+      }
     });
   });
 };
 
 // Array for win and lose
 const easyArray = ["ok", "ok", "ok", "ok", "ok", "ok", "ok", "ok", "boom"];
-function suffler(array) {
+const mediumArray = ["ok", "ok", "ok", "ok", "ok", "ok", "ok", "ok", "ok", "ok", "boom", "boom"];
+const hardArray = [
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "ok",
+  "boom",
+  "boom",
+  "boom",
+  "boom",
+];
+
+// Suffle array to make it random
+const suffler = function (array) {
   let m = array.length;
   let t;
   let i;
@@ -88,6 +113,10 @@ function suffler(array) {
   }
 
   return array;
-}
-
-console.log(suffler(easyArray));
+};
+const resSuffler = suffler(easyArray);
+const mediumSuffler = suffler(mediumArray);
+const hardSuffler = suffler(hardArray);
+console.log(resSuffler);
+console.log(mediumSuffler);
+console.log(hardSuffler);
