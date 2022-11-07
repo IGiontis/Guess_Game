@@ -59,9 +59,35 @@ difficulty.addEventListener("change", function (e) {
 // Implementation for adding images
 const addInnerBoxes = function () {
   const boxes = document.querySelectorAll(".box");
-  boxes.forEach((box) => {
-    box.addEventListener("click", function () {
-      box.innerHTML = "ok";
+  //   test
+
+  boxes.forEach((currentBox, i) => {
+    currentBox.addEventListener("click", function () {
+      currentBox.innerHTML = "test";
+      currentBox.style.backgroundColor = "yellow";
     });
   });
 };
+
+// Array for win and lose
+const easyArray = ["ok", "ok", "ok", "ok", "ok", "ok", "ok", "ok", "boom"];
+function suffler(array) {
+  let m = array.length;
+  let t;
+  let i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m]; // This is the number of the array -1
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
+console.log(suffler(easyArray));
