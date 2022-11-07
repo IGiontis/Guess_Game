@@ -80,6 +80,11 @@ body {
   width: 10rem;
   height: 10rem;
   background-color: red;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: yellow;
 }
 
 /* Extra commands about hide etc */

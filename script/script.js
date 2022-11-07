@@ -10,10 +10,9 @@ const boxEasy = document.querySelector(".box-easy");
 const boxMedium = document.querySelector(".box-medium");
 const boxHard = document.querySelector(".box-hard");
 const boxContainer = document.querySelector(".box-container");
+
 const difficulty = document.querySelector("#difficulty");
 const luckText = document.querySelector(".luck-text");
-
-// Functionality for choosing the mode
 
 // Repeat functions
 const showGame = function () {
@@ -22,12 +21,14 @@ const showGame = function () {
   form.classList.add("hidden");
 };
 
+// Functionality for choosing the mode
 difficulty.addEventListener("change", function (e) {
   //   console.log(difficulty.value);
   let divNumber = 9;
 
   if (difficulty.value === "easy") {
     showGame();
+    addInnerBoxes();
   }
 
   if (difficulty.value === "medium") {
@@ -37,9 +38,9 @@ difficulty.addEventListener("change", function (e) {
       const moreDiv = document.createElement("div");
       moreDiv.className = `box box${(divNumber += 1)}`;
       boxContainer.appendChild(moreDiv);
-
-      showGame();
     }
+    showGame();
+    addInnerBoxes();
   }
 
   if (difficulty.value === "hard") {
@@ -50,7 +51,17 @@ difficulty.addEventListener("change", function (e) {
       boxContainer.appendChild(moreDiv);
     }
     boxContainer.style.width = "50rem";
-
     showGame();
+    addInnerBoxes();
   }
 });
+
+// Implementation for adding images
+const addInnerBoxes = function () {
+  const boxes = document.querySelectorAll(".box");
+  boxes.forEach((box) => {
+    box.addEventListener("click", function () {
+      box.innerHTML = "ok";
+    });
+  });
+};
