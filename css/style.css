@@ -1,0 +1,89 @@
+:root {
+  --space-header: 1.2rem;
+  --letter-space: 0.1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 120rem;
+  font-size: 1.6rem;
+  margin: 0 auto;
+}
+
+/* Pure css */
+
+.container {
+  height: 100vh;
+  background-color: blanchedalmond;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-header);
+}
+.header-text {
+  margin-left: var(--space-header);
+  letter-spacing: var(--letter-space);
+}
+
+/* buttons */
+.btns {
+  display: flex;
+  gap: 1.4rem;
+  margin-right: var(--space-header);
+}
+
+.btn {
+  border-radius: 0.4rem;
+  padding: 1.6rem;
+  cursor: pointer;
+}
+
+/* Form */
+.form,
+.luck-text-formation {
+  display: flex;
+  margin-bottom: var(--space-header);
+  justify-content: center;
+}
+
+.luck-text-formation {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* boxes */
+
+.main-container {
+  margin-top: 10rem;
+}
+
+.box-container {
+  width: 32rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.box {
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+}
+
+/* Extra commands about hide etc */
+
+.hidden {
+  display: none;
+}
