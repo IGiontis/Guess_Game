@@ -169,9 +169,6 @@ const suffler = function (array) {
 const resSuffler = suffler(easyArray);
 const mediumSuffler = suffler(mediumArray);
 const hardSuffler = suffler(hardArray);
-console.log(resSuffler);
-console.log(mediumSuffler);
-console.log(hardSuffler);
 
 //************************************ */
 // Close and Show modals

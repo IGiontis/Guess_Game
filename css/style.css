@@ -349,7 +349,24 @@ body {
   }
 }
 
+@media (max-width: 590px) {
+  .box-container {
+    max-width: 51rem !important;
+  }
+  .box {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
 @media (max-width: 515px) {
+  .box-container {
+    max-width: 29rem !important;
+  }
+  .box {
+    width: 5rem;
+    height: 5rem;
+  }
   .modal-info {
     left: 9rem;
     top: 9rem;
@@ -412,9 +429,16 @@ body {
     left: 2rem;
     font-size: 1.5rem;
   }
+
+  .box-container {
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 390px) {
+  .header-text {
+    font-size: 1.1rem;
+  }
   .modal-info {
     left: 5rem;
     top: 9rem;
