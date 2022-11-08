@@ -13,7 +13,7 @@
       <header class="header">
         <h1 class="header-text">Welcome to the find the animals game</h1>
         <div class="btns">
-          <button class="btn btn-start">start</button>
+          <button class="btn btn-reset">start</button>
           <button class="btn btn-info">Info</button>
         </div>
       </header>
@@ -42,14 +42,25 @@
           <div class="box box-8"></div>
           <div class="box box-9"></div>
         </div>
-        <p class="lost-text">You was unlucky this time, good luck to your next try</p>
+        <p class="lost-text hidden">You were unlucky this time, good luck to your next try 🍀</p>
 
         <!-- Test Modal -->
         <div class="modal-info hidden">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque corrupti, omnis
-          praesentium veritatis minus expedita dolorem quia accusamus modi, quam possimus vitae
-          perferendis magni, excepturi quos aliquam! Laudantium, quae voluptatum.
-
+          <p>
+            Your porpouse to this game is
+            <strong>to find all the🍀</strong> in the boxes. But you must consider that
+            <strong>there are some🔥</strong> and if you step on them you are going to lose.
+          </p>
+          <p>
+            <strong>There are three modes: </strong><span class="modal-infoText--easy">Easy</span>,
+            <span class="modal-infoText--medium">medium</span> and
+            <span class="modal-infoText--hard">hard</span>
+          </p>
+          <ul class="list-info">
+            <li class="modal-list--easy"><span>Easy: 3*3 boxes with </span><span> 1🔥</span></li>
+            <li class="modal-list--medium"><span>Medium: 4*3 boxes with</span> <span>2🔥</span></li>
+            <li class="modal-list--hard"><span>Hard: 5*3 boxes with</span><span> 4🔥</span></li>
+          </ul>
           <button class="close-modal">&times;</button>
         </div>
       </main>

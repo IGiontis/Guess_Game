@@ -73,10 +73,9 @@ body {
   position: absolute;
   top: 15rem;
   left: 25%;
-  /* transform: translateX(-50%);
-  transform: translateY(-50%); */
-
-  z-index: 2;
+  text-shadow: 0.1rem 0.1rem 0.5rem black;
+  z-index: 200;
+  color: rgb(202, 175, 175);
   font-size: 2.6rem;
   font-weight: bold;
   text-align: center;
@@ -112,16 +111,66 @@ body {
 
 .modal-info {
   position: absolute;
-  left: 33%;
-  top: 120%;
+  left: 33rem;
+  top: 3rem;
   /* transform: translateX(-50%);
   transform: translateY(-50%); */
-  width: 40rem;
+  width: 60rem;
   background-color: white;
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 100;
+}
+
+.list-info {
+  margin-top: 1.1rem;
+}
+.modal-infoText--easy,
+.modal-infoText--medium,
+.modal-infoText--hard {
+  font-weight: 700;
+}
+.modal-infoText--easy {
+  color: rgba(0, 128, 0, 0.833);
+}
+
+.modal-infoText--medium {
+  color: rgba(186, 166, 17, 0.932);
+}
+
+.modal-infoText--hard {
+  color: rgba(186, 59, 17, 0.981);
+}
+
+.modal-list--easy {
+  background-color: rgba(0, 128, 0, 0.7);
+  width: 26rem;
+  padding-left: 0.4rem;
+  margin-bottom: 0.5rem;
+  /* font-size: 1.4rem; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-list--medium {
+  /* font-size: 1.4rem; */
+  background-color: rgba(186, 166, 17, 0.7);
+  width: 26rem;
+  padding-left: 0.4rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-list--hard {
+  background-color: rgba(186, 59, 17, 0.7);
+  width: 26rem;
+  padding-left: 0.4rem;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .close-modal {
