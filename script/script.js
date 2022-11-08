@@ -56,6 +56,7 @@ const checkDifficulty = function () {
       moreDiv.className = `box box${(divNumber += 1)}`;
       boxContainer.appendChild(moreDiv);
     }
+    boxContainer.style.width = "45rem";
     startGame();
   }
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 :root {
   --space-header: 1.2rem;
   --letter-space: 0.1rem;
@@ -23,13 +23,16 @@ body {
   max-width: 120rem;
   font-size: 1.6rem;
   margin: 0 auto;
+  background-color: rgb(255, 235, 205);
 }
 
 /* Pure css */
 
 .container {
-  height: 100vh;
-  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  height: 62rem;
+  background-color: rgb(255, 235, 205);
 }
 
 .header {
@@ -41,24 +44,33 @@ body {
 .header-text {
   margin-left: var(--space-header);
   letter-spacing: var(--letter-space);
+  background: -webkit-linear-gradient(rgb(54, 106, 162), rgb(5, 58, 5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
 }
 
 /* buttons */
 .btns {
   display: flex;
-  gap: 1.4rem;
+  gap: 2rem;
   margin-right: var(--space-header);
 }
 
 .btn {
-  border-radius: 0.4rem;
+  background-color: rgb(75, 68, 138);
+  color: white;
+  font-size: 1.6rem;
+  letter-spacing: var(--letter-space);
+  border-radius: 1rem;
   padding: 1.6rem;
   cursor: pointer;
+  text-transform: uppercase;
   transition: all 0.3s;
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color: rgb(46, 42, 80);
 }
 .difficulty {
   cursor: pointer;
@@ -74,6 +86,11 @@ body {
 
 .luck-text-formation {
   font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.luck-text {
+  color: rgb(48, 48, 120);
   font-weight: bold;
 }
 
@@ -109,11 +126,12 @@ body {
 }
 
 .box-container {
-  width: 32rem;
+  max-width: 32rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  /* margin-left: 30rem; */
 }
 
 .box {
@@ -121,6 +139,7 @@ body {
   height: 10rem;
   background-color: var(--pressed-box);
   cursor: pointer;
+  transition: all 0.1s;
 }
 
 .box:hover {
@@ -226,7 +245,14 @@ body {
   z-index: 10;
 }
 
+.footer {
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* ****************************** */
 /* Extra commands about hide etc */
+/* ***************************** */
 
 .hidden {
   display: none;
@@ -251,3 +277,121 @@ body {
   align-items: center;
   font-size: 3.2rem;
 }
+
+/* ****************** */
+/* MEDIA QUERIES */
+/* ****************** */
+/* 
+@media (max-width: 1000px) {
+  .box-container {
+    margin-left: 23rem;
+  }
+  .header-text {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    height: 50rem;
+  }
+  .box-container {
+    margin-left: 18rem;
+  }
+  .header-text {
+    font-size: 2.4rem;
+  }
+
+  .box {
+    width: 8.6rem;
+    height: 8.6rem;
+  }
+
+  .btn {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-text {
+    font-size: 2.4rem;
+  }
+  .box-container {
+    margin-left: 12rem;
+  }
+  .container {
+    height: 48rem;
+  }
+
+  .main-container {
+    margin-top: 8.1rem;
+  }
+  .box {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .box-container {
+    margin-left: 8rem;
+  }
+  .container {
+    height: 47rem;
+  }
+  .header-text {
+    font-size: 2rem;
+  }
+  .btn {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+  .box {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .main-container {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .header-text {
+    font-size: 1.7rem;
+  }
+  .box {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  .btn {
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
+  .btns {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .box-container {
+    max-width: 21rem;
+    gap: 0.7rem;
+    margin-left: 12rem;
+  }
+  .box {
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+  .header-text {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.4rem;
+    font-size: 1.2rem;
+  }
+  .btns {
+    gap: 0.8rem;
+  }
+} */
