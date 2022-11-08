@@ -14,6 +14,8 @@ const boxContainer = document.querySelector(".box-container");
 const difficulty = document.querySelector(".difficulty");
 const luckText = document.querySelector(".luck-text");
 const lostText = document.querySelector(".lost-text");
+const winText = document.querySelector(".win-text");
+const winOverlay = document.querySelector(".win-overlay");
 
 const modal = document.querySelector(".modal");
 const modalInfo = document.querySelector(".modal-info");
@@ -32,6 +34,12 @@ const showGame = function () {
 const startGame = function () {
   showGame();
   addInnerBoxes();
+};
+
+const winImplamantation = function () {
+  winText.classList.remove("hidden");
+  winOverlay.classList.remove("hidden");
+  luckText.innerHTML = `WON WON WON!!! 🎉`;
 };
 
 const checkDifficulty = function () {
@@ -63,41 +71,62 @@ const checkDifficulty = function () {
   }
 };
 
-// *****************************
+// *************************************** */
 // Functionality for choosing the mode
+//**************************************** */
 
 difficulty.addEventListener("change", checkDifficulty);
 
 // *********************************
 // Implementation for adding emojis
+// *********************************
 const addInnerBoxes = function () {
   const boxes = document.querySelectorAll(".box");
 
+  let dataNum = 1;
+
+  // ********************************************
   //  Adding to each box the value of win or lose
+  // ********************************************
   boxes.forEach((currentBox, i) => {
     currentBox.addEventListener("click", function () {
-      if (difficulty.value === "easy") currentBox.innerHTML = resSuffler[i];
+      if (difficulty.value === "easy") {
+        currentBox.innerHTML = resSuffler[i];
+      }
       if (difficulty.value === "medium") currentBox.innerHTML = mediumSuffler[i];
       if (difficulty.value === "hard") currentBox.innerHTML = hardSuffler[i];
 
       // Adding the colors
-      if (currentBox.innerHTML === "🍀") currentBox.classList.add("pointerEvent", "win-box");
-      else {
-        luckText.classList.add("hidden");
+
+      if (currentBox.innerHTML === "🍀") {
+        currentBox.classList.add("pointerEvent", "win-box");
+        currentBox.dataset.boxNum = `${dataNum++}`;
+        if (currentBox.dataset.boxNum === "8" && difficulty.value === "easy") {
+          winImplamantation();
+        }
+        if (currentBox.dataset.boxNum === "10" && difficulty.value === "medium") {
+          winImplamantation();
+        }
+        if (currentBox.dataset.boxNum === "11" && difficulty.value === "hard") {
+          winImplamantation();
+        }
+
+        // maybe here i need to add data set, an einai trifili dwse dataset arithmo, an einai dataset = 8 emafnise win
+      } else {
+        // luckText.classList.add("hidden");
+        luckText.innerHTML = `LOST ☹️`;
         currentBox.classList.add("lost-box", "pointerEvent");
         // boxContainer.classList.add("hidden");
         lostText.classList.remove("hidden");
         overlay.classList.remove("hidden");
       }
     });
-
-    // if all 🍀 found you won the game
-    // for (let i = 0; i < boxes.length - 1; i++) console.log("box");
   });
 };
 
-//************************ */
+//******************************* */
 // Array for win and lose
+//****************************** */
 const easyArray = ["🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🔥"];
 const mediumArray = ["🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🍀", "🔥", "🔥"];
 const hardArray = [
@@ -147,10 +176,27 @@ console.log(hardSuffler);
 //************************************ */
 // Close and Show modals
 //************************************ */
+const winAndLostModal = function () {
+  const boxes = document.querySelectorAll(".box");
+  lostText.classList.add("hidden");
+  winText.classList.add("hidden");
+  boxContainer.classList.add("pointerEvent");
+
+  boxes.forEach((box) => (box.style.opacity = "0.5"));
+};
 const closeModal = function () {
   modalInfo.classList.add("hidden");
   overlay.classList.add("hidden");
-  if (!lostText.classList.contains("hidden")) {
+  winOverlay.classList.add("hidden");
+
+  if (!lostText.classList.contains("hidden")) winAndLostModal();
+  if (!winText.classList.contains("hidden")) winAndLostModal();
+};
+
+const openModal = function () {
+  modalInfo.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  if (!winText.classList.contains("hidden")) {
     const boxes = document.querySelectorAll(".box");
     lostText.classList.add("hidden");
     boxContainer.classList.add("pointerEvent");
@@ -159,13 +205,9 @@ const closeModal = function () {
   }
 };
 
-const openModal = function () {
-  modalInfo.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
 btnInfo.addEventListener("click", openModal);
 overlay.addEventListener("click", closeModal);
+winOverlay.addEventListener("click", closeModal);
 xMarkModal.addEventListener("click", closeModal);
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") closeModal();

@@ -54,6 +54,14 @@ body {
   border-radius: 0.4rem;
   padding: 1.6rem;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+}
+.difficulty {
+  cursor: pointer;
 }
 
 /* Form */
@@ -67,6 +75,18 @@ body {
 .luck-text-formation {
   font-size: 2.2rem;
   font-weight: bold;
+}
+
+.win-text {
+  position: absolute;
+  top: 15rem;
+  left: 25%;
+  text-shadow: 0.1rem 0.1rem 0.5rem rgba(33, 174, 15, 0.481);
+  z-index: 200;
+  color: rgb(227, 236, 229);
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .lost-text {
@@ -185,6 +205,16 @@ body {
   background: none;
 }
 
+.win-overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(19, 79, 5, 0.785);
+  backdrop-filter: blur(3px);
+  z-index: 10;
+}
 .overlay {
   top: 0;
   left: 0;
