@@ -90,7 +90,7 @@ const addInnerBoxes = function () {
   //  Adding to each box the value of win or lose
   // ********************************************
   boxes.forEach((currentBox, i) => {
-    currentBox.addEventListener("click", function () {
+    currentBox.addEventListener("mousedown", function () {
       if (difficulty.value === "easy") {
         currentBox.innerHTML = resSuffler[i];
       }
