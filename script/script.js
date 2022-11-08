@@ -56,7 +56,7 @@ const checkDifficulty = function () {
       moreDiv.className = `box box${(divNumber += 1)}`;
       boxContainer.appendChild(moreDiv);
     }
-    boxContainer.style.width = "45rem";
+    boxContainer.style.maxWidth = "45rem";
     startGame();
   }
 
@@ -67,7 +67,7 @@ const checkDifficulty = function () {
       moreDiv.className = `box box${(divNumber += 1)}`;
       boxContainer.appendChild(moreDiv);
     }
-    boxContainer.style.width = "50rem";
+    boxContainer.style.maxWidth = "50rem";
     startGame();
   }
 };
@@ -114,10 +114,9 @@ const addInnerBoxes = function () {
 
         // maybe here i need to add data set, an einai trifili dwse dataset arithmo, an einai dataset = 8 emafnise win
       } else {
-        // luckText.classList.add("hidden");
         luckText.innerHTML = `LOST ☹️`;
         currentBox.classList.add("lost-box", "pointerEvent");
-        // boxContainer.classList.add("hidden");
+
         lostText.classList.remove("hidden");
         overlay.classList.remove("hidden");
       }
@@ -218,3 +217,7 @@ document.addEventListener("keydown", function (e) {
 btnReset.addEventListener("click", function () {
   window.location.reload();
 });
+
+// **********************
+// QUERY SELECTOR
+//*********************** */
