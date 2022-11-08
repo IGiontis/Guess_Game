@@ -40,12 +40,17 @@ const winImplamantation = function () {
   winText.classList.remove("hidden");
   winOverlay.classList.remove("hidden");
   luckText.innerHTML = `WON WON WON!!! 🎉`;
+  btnReset.classList.remove("disable-button");
 };
 
 const checkDifficulty = function () {
   let divNumber = 9;
   if (difficulty.value === "easy") {
     startGame();
+
+    // check media
+    const media570 = window.matchMedia("(max-width: 570px)");
+    if (media570.matches) boxContainer.style.maxWidth = "28rem !important";
   }
 
   if (difficulty.value === "medium") {
@@ -116,7 +121,7 @@ const addInnerBoxes = function () {
       } else {
         luckText.innerHTML = `LOST ☹️`;
         currentBox.classList.add("lost-box", "pointerEvent");
-
+        btnReset.classList.remove("disable-button");
         lostText.classList.remove("hidden");
         overlay.classList.remove("hidden");
       }

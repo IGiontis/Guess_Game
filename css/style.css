@@ -31,7 +31,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  height: 62rem;
+  height: 100%;
+  margin-bottom: 2rem;
   background-color: rgb(255, 235, 205);
 }
 
@@ -122,7 +123,7 @@ body {
 /* boxes */
 
 .main-container {
-  margin-top: 10rem;
+  margin-top: 7.5rem;
   position: relative;
 }
 
@@ -279,6 +280,11 @@ body {
   font-size: 3.2rem;
 }
 
+.disable-button {
+  pointer-events: none;
+  background-color: #333;
+}
+
 /* ****************** */
 /* MEDIA QUERIES */
 /* ****************** */
@@ -350,18 +356,19 @@ body {
 }
 
 @media (max-width: 590px) {
-  .box-container {
-    max-width: 51rem !important;
-  }
   .box {
     width: 9rem;
     height: 9rem;
+  }
+
+  .contaier {
+    height: 50rem; /*! */
   }
 }
 
 @media (max-width: 515px) {
   .box-container {
-    max-width: 29rem !important;
+    max-width: 24rem !important;
   }
   .box {
     width: 5rem;
