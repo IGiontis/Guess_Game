@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 :root {
   --space-header: 1.2rem;
   --letter-space: 0.1rem;
   --pressed-box: #666;
   --hover-box: #444;
   --win-box: rgb(31, 125, 31);
-  --lost-box: rgb(252, 19, 19);
+  --lost-box: rgb(176, 17, 17);
 }
 
 * {
@@ -15,6 +16,7 @@
 
 html {
   font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -67,10 +69,24 @@ body {
   font-weight: bold;
 }
 
+.lost-text {
+  position: absolute;
+  top: 15rem;
+  left: 25%;
+  /* transform: translateX(-50%);
+  transform: translateY(-50%); */
+
+  z-index: 2;
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* boxes */
 
 .main-container {
   margin-top: 10rem;
+  position: relative;
 }
 
 .box-container {
@@ -80,6 +96,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+
 .box {
   width: 10rem;
   height: 10rem;
@@ -89,6 +106,45 @@ body {
 
 .box:hover {
   background-color: var(--hover-box);
+}
+
+/* Modal  & overlay*/
+
+.modal-info {
+  position: absolute;
+  left: 33%;
+  top: 120%;
+  /* transform: translateX(-50%);
+  transform: translateY(-50%); */
+  width: 40rem;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.close-modal {
+  position: absolute;
+  top: -1.2rem;
+  right: 0.3rem;
+  font-size: 5rem;
+  color: #333;
+
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.792);
+  backdrop-filter: blur(3px);
+  z-index: 10;
 }
 
 /* Extra commands about hide etc */
@@ -103,8 +159,16 @@ body {
 
 .win-box {
   background-color: var(--win-box);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2rem;
 }
 
 .lost-box {
   background-color: var(--lost-box);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2rem;
 }

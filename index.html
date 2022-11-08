@@ -23,7 +23,7 @@
         <form action="#" class="form">
           <label for="header-main">Choose the difficulty:</label>
 
-          <select name="difficulty" id="difficulty">
+          <select name="difficulty" id="difficulty" class="difficulty">
             <option value="" selected disabled hidden>Choose here</option>
             <option value="easy" class="box-easy" data-easy="easy">Easy</option>
             <option value="medium" data-medium="medium" class="box-medium">Medium</option>
@@ -31,7 +31,7 @@
           </select>
         </form>
 
-        <div class="box-container">
+        <div class="box-container hidden">
           <div class="box box-1"></div>
           <div class="box box-2"></div>
           <div class="box box-3"></div>
@@ -42,8 +42,21 @@
           <div class="box box-8"></div>
           <div class="box box-9"></div>
         </div>
+        <p class="lost-text">You was unlucky this time, good luck to your next try</p>
+
+        <!-- Test Modal -->
+        <div class="modal-info hidden">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque corrupti, omnis
+          praesentium veritatis minus expedita dolorem quia accusamus modi, quam possimus vitae
+          perferendis magni, excepturi quos aliquam! Laudantium, quae voluptatum.
+
+          <button class="close-modal">&times;</button>
+        </div>
       </main>
     </div>
+
+    <!-- overlay -->
+    <div class="overlay hidden"></div>
     <script src="/script/script.js"></script>
   </body>
 </html>
