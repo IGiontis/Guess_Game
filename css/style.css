@@ -368,7 +368,7 @@ body {
 
 @media (max-width: 515px) {
   .box-container {
-    max-width: 24rem !important;
+    max-width: 20rem !important;
   }
   .box {
     width: 5rem;
@@ -440,6 +440,11 @@ body {
   .box-container {
     gap: 0.5rem;
   }
+
+  /* .box {
+    width: 4rem;
+    height: 4rem;
+  } */
 }
 
 @media (max-width: 390px) {
