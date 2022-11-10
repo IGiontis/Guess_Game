@@ -15,3 +15,7 @@ document.addEventListener("keydown", function (e) {
 btnReset.addEventListener("click", function () {
   window.location.reload();
 });
+
+const hardTextSwap = document.querySelector(".hard-text--modal");
+const media515 = window.matchMedia("(max-width: 515px)");
+if (media515.matches) hardTextSwap.innerHTML = `Hard: 3*5 boxes with`;

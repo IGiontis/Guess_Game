@@ -11,3 +11,4 @@ export const btnInfo = document.querySelector(".btn-info");
 export const difficulty = document.querySelector(".difficulty");
 export const luckText = document.querySelector(".luck-text");
 export const form = document.querySelector(".form");
+export const hardText = document.querySelector(".hardText-modal");
