@@ -24,7 +24,12 @@ export const checkDifficulty = function () {
   }
 
   if (difficulty.value === "hard") {
-    boxContainer.style.gridTemplateColumns = "repeat(5,1fr)";
+    const media512 = window.matchMedia("(max-width:512px)");
+    if (media512.matches) {
+      boxContainer.style.gridTemplateColumns = "repeat(3,1fr)";
+    } else {
+      boxContainer.style.gridTemplateColumns = "repeat(5,1fr)";
+    }
     for (let i = 0; i < 6; i++) {
       const moreDiv = document.createElement("div");
       moreDiv.className = `box box${(divNumber += 1)}`;
